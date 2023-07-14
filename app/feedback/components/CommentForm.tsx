@@ -1,8 +1,16 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+
 
 const CommentForm = async () => {
+  const supabase = createServerComponentClient({ cookies });
 
-  const submitComment = await supabase.from("comments").update();
+  const { data, error } = await supabase
+  .from('comments')
+  .insert({ id: 3, user: 'Denmark Jones', comment: 'Can I schedule a chat?' })
+  .select()
+
+  console.log(data)
   return (
     <form>
       <label>Name</label>
