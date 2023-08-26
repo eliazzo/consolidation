@@ -1,8 +1,9 @@
 const Navbar = () => {
   return (
-    <div className="flex bg-pink-500 justify-between h-8">
+    <div className="flex justify-between h-20 mx-3 mt-3">
       <a href="/">Home</a>
       <a href="/blog">Blog</a>
+      <a href="/books">Reads</a>
       <a href="/feedback">Feedback</a>
     </div>
   )
