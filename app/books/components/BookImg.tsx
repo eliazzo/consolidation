@@ -29,7 +29,9 @@ export const BookImg = ( {book}: Props ) => {
   }, [book])
 
   return (
-    <Image src={imageSrc} alt="book cover" width={imageWidth} height={imageHeight} className="px-8"/>
+    <div className="justify-center items-center text-center">
+    <Image src={imageSrc} alt="book cover" width={imageWidth} height={imageHeight}/>
+    </div>
   )
 
 }
