@@ -1,37 +1,23 @@
 "use client"
-import fetchImage from "../api/covers/route";
-import React, { useState, useEffect } from 'react';
-import Image from "next/image";
+import { BookImg } from "./components/BookImg"
 
-const Books = () => {
-  const [imageSrc, setImageSrc] = useState<string>('');
-  const [imageWidth, setImageWidth] = useState<number>(0);
-  const [imageHeight, setImageHeight] = useState<number>(0);
+const murakami = "isbn/0099448823-L"
+const keegan = "isbn/9780802158741"
+const zevin = "isbn/9780593321218"
+
+const bookArr = [murakami, keegan, zevin]
 
 
-  useEffect(() => {
-    const loadImage = async () => {
-    try {
-    const img = await fetchImage("https://covers.openlibrary.org/b/isbn/0099448823-L.jpg")
-    setImageSrc(img.src)
-    setImageWidth(img.width);
-    setImageHeight(img.height);
-    } catch (error) {
-      console.error('error loading image')
-    }
-  }
 
-  loadImage()
-  
-
-  }, [])
- 
+const Books = ( ) => { 
   
   return (
-    <>
-    <h1>list recent reads using books api</h1>
-    <Image src={imageSrc} alt="book cover" width={imageWidth} height={imageHeight} />
-    </>
+    <div className="flex-col border-black border-2">
+    <h1 className="text-center">Recent reads</h1>
+    {bookArr.map((book) => (
+      <BookImg key={book} book={book}/>
+    ))}
+    </div>
   )
 }
 
