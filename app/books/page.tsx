@@ -12,11 +12,13 @@ const bookArr = [murakami, keegan, zevin]
 const Books = ( ) => { 
   
   return (
-    <div className="flex-col border-black border-2">
+    <div className="flex-col p-8">  
     <h1 className="text-center">Recent reads</h1>
+    <div className="flex flex-wrap justify-center">
     {bookArr.map((book) => (
       <BookImg key={book} book={book}/>
     ))}
+    </div>
     </div>
   )
 }
