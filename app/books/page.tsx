@@ -8,8 +8,10 @@ const zevin = "isbn/9780593321218"
 const salinger = "isbn/9780316769532"
 const caldwell = "isbn/9780571353743"
 const boyne = "isbn/9781784161002"
+const hamid = "isbn/9780241953938"
+const atkinson = "isbn/9780593466322"
 
-const bookArr = [murakami, keegan, zevin, salinger, caldwell, boyne]
+const bookArr = [murakami, keegan, zevin, salinger, caldwell, boyne, hamid, atkinson]
 
 const Books = ( ) => { 
   
