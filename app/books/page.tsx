@@ -1,11 +1,15 @@
 "use client"
 import { BookImg } from "./components/BookImg"
 
+// do these need to be stored somewhere else?
 const murakami = "isbn/0099448823-L"
 const keegan = "isbn/9780802158741"
 const zevin = "isbn/9780593321218"
+const salinger = "isbn/9780316769532"
+const caldwell = "isbn/9780571353743"
+const boyne = "isbn/9781784161002"
 
-const bookArr = [murakami, keegan, zevin]
+const bookArr = [murakami, keegan, zevin, salinger, caldwell, boyne]
 
 const Books = ( ) => { 
   
