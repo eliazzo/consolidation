@@ -7,19 +7,17 @@ const zevin = "isbn/9780593321218"
 
 const bookArr = [murakami, keegan, zevin]
 
-
-
 const Books = ( ) => { 
   
   return (
-    <div className="flex-col p-8">  
-    <h1 className="text-center">Recent reads</h1>
-    <div className="flex flex-wrap justify-center">
+    <>  
+    <h1 className="text-center mt-8">Recent reads</h1>
+    <div className="flex justify-evenly flex-wrap p-8">
     {bookArr.map((book) => (
       <BookImg key={book} book={book}/>
     ))}
     </div>
-    </div>
+    </>
   )
 }
 
