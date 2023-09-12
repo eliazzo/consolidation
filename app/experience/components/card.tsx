@@ -1,7 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
-const Card = async () => {
+const DisplayExperience = async () => {
   const supabase = createServerComponentClient({ cookies });
   const { data: experience } = await supabase.from("experience").select();
 
@@ -19,4 +19,4 @@ const Card = async () => {
   )
 }
 
-export default Card
+export default DisplayExperience
