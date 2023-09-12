@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <div className="h-20 w-vpw bg-lime-400">
+    <div className="h-20 w-vpw border-b-2 border-bg">
       <ul className="p-5 flex justify-evenly mx-64 font-mono">
       <li><a href="/">Home</a></li>
       <li><a href="/experience">Experience</a></li>
