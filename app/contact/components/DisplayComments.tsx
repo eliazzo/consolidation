@@ -8,11 +8,11 @@ const DisplayComments = async () => {
   return (
     <ul className="my-auto">
       <h1>Comments list</h1>
-    {comments?.map((comment) => (
-      <li key={comment.user}>{comment.comment}</li>
-    ))}
-  </ul>
-  )
-}
+      {comments?.map((comment) => (
+        <li key={comment.user}>{comment.comment}</li>
+      ))}
+    </ul>
+  );
+};
 
-export default DisplayComments
+export default DisplayComments;

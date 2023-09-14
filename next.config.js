@@ -3,14 +3,11 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'covers.openlibrary.org',
-      }
+        protocol: "https",
+        hostname: "covers.openlibrary.org",
+      },
+    ],
+  },
+};
 
-    ]
-  }
-}
-
-module.exports = nextConfig
-
-
+module.exports = nextConfig;
