@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const BookImg = ({ book }: Props) => {
-  // const [imageSrc, setImageSrc] = useState<Response>();
+  const [imageSrc, setImageSrc] = useState<string>("");
 
   useEffect(() => {
     const loadImage = async () => {
@@ -16,18 +16,25 @@ export const BookImg = ({ book }: Props) => {
           "Content-Type": "application/json",
         }
       })
-    }
+      if (!response.ok) {
+        throw new Error("API request failed");
+      }
+
+      const data = await response.json();
+      const url = data.url
+      
+      setImageSrc(url)
+      }
     loadImage()
   }, []);
 
   return (
-    <h1>hello</h1>
-    // <Image
-    //   src={imageSrc}
-    //   alt="book cover"
-    //   width={200}
-    //   height={320}
-    //   className="mt-4 my-4"
-    // />
+    <Image
+      src={imageSrc}
+      alt="book cover"
+      width={200}
+      height={320}
+      className="mt-4 my-4"
+    />
   );
 };
