@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-import fetchImage from "../../api/covers/route";
-
 interface Props {
   book: string;
 }
@@ -12,18 +10,23 @@ export const BookImg = ({ book }: Props) => {
 
   useEffect(() => {
     const loadImage = async () => {
-      try {
-        const img = await fetchImage(
-          `https://covers.openlibrary.org/b/${book}.jpg`,
-        );
-        setImageSrc(img.src);
-      } catch (error) {
-        console.error("error loading image");
+      const response = await fetch("/api/books", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+      if (!response.ok) {
+        throw new Error("API request failed");
       }
-    };
 
-    loadImage();
-  }, [book]);
+      const data = await response.json();
+      const url = data.url
+      
+      setImageSrc(url)
+      }
+    loadImage()
+  }, []);
 
   return (
     <Image
