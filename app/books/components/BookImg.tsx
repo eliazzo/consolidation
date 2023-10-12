@@ -10,7 +10,7 @@ export const BookImg = ({ book }: Props) => {
 
   useEffect(() => {
     const loadImage = async () => {
-      const response = await fetch("/api/books", {
+      const response = await fetch(`/api/books?id=${book}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
