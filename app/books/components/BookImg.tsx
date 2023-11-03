@@ -1,36 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { StaticImageData } from "next/image";
 import Image from "next/image";
 
 interface Props {
-  book: string;
+  book: StaticImageData;
 }
 
 export const BookImg = ({ book }: Props) => {
-  const [imageSrc, setImageSrc] = useState<string>("");
-
-  useEffect(() => {
-    const loadImage = async () => {
-      const response = await fetch("/api/books", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        }
-      })
-      if (!response.ok) {
-        throw new Error("API request failed");
-      }
-
-      const data = await response.json();
-      const url = data.url
-      
-      setImageSrc(url)
-      }
-    loadImage()
-  }, []);
 
   return (
     <Image
-      src={imageSrc}
+      src={book}
       alt="book cover"
       width={200}
       height={320}

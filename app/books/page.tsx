@@ -1,25 +1,25 @@
 "use client";
 import { BookImg } from "./components/BookImg";
 
-// do these need to be stored somewhere else?
-const murakami = "isbn/0099448823-L";
-const keegan = "isbn/9780802158741";
-const zevin = "isbn/9780593321218";
-const salinger = "isbn/9780316769532";
-const caldwell = "isbn/9780571353743";
-const boyne = "isbn/9781784161002";
-const hamid = "isbn/9780241953938";
-const atkinson = "isbn/9780593466322";
+import homegoing from "../public/assets/homegoing.jpg"
+import murakami from "../public/assets/murakami.jpg"
+import tomorrow from "../public/assets/tomorrow.jpg"
+import demon from "../public/assets/demon.jpg"
+import running from "../public/assets/running.jpg"
+import catcher from "../public/assets/catcher.jpg"
+import intimacies from "../public/assets/intimacies.jpg"
+import small from "../public/assets/small.jpg"
+
 
 const bookArr = [
+  homegoing,
   murakami,
-  keegan,
-  zevin,
-  salinger,
-  caldwell,
-  boyne,
-  hamid,
-  atkinson,
+  tomorrow,
+  demon,
+  running,
+  catcher,
+  intimacies,
+  small
 ];
 
 const Books = () => {
@@ -28,7 +28,7 @@ const Books = () => {
       <h1 className="text-center mt-8">Recent reads</h1>
       <div className="flex justify-evenly flex-wrap p-8">
         {bookArr.map((book) => (
-          <BookImg key={book} book={book} />
+          <BookImg book={book} />
         ))}
       </div>
     </>
